@@ -26,22 +26,12 @@ public class MainActivity extends AppCompatActivity {
         final TextView alarm1, alarm2, alarm3, alarm4, alarm5, alarm6;
         final ImageView alarmImage1, alarmImage2, alarmImage3, alarmImage4, alarmImage5, alarmImage6;
         alarm1 = (TextView) findViewById(R.id.alarm1);
-        alarmImage2 = (ImageView) findViewById(R.id.imageAlarm2);
 
         alarm1.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SetAlarm.class);
                 intent.putExtra("name", "alarm");
-                startActivity(intent);
-            }
-        });
-
-        alarmImage2.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SetAlarm.class);
-                intent.putExtra("name", "image");
                 startActivity(intent);
             }
         });

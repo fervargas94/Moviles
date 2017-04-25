@@ -11,6 +11,8 @@
     tools:context="com.example.fernandavargas.proyectos.MainActivity"
     tools:showIn="@layout/activity_main">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -75,6 +77,20 @@
                     android:gravity="center_horizontal|center_vertical"
                     android:background="@color/blue2">
 
+                    <TextView
+                        android:text="06:20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="65dp"
+                        android:id="@+id/alarm2"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:clickable="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="42sp"
+                        android:layout_marginTop="40dp" />
+
                     <Switch
                         android:text=""
                         android:layout_width="wrap_content"
@@ -84,18 +100,6 @@
                         android:layout_marginBottom="23dp"
                         android:gravity="center_horizontal|center_vertical"
                         android:id="@+id/switch2" />
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:maxWidth="22dp"
-                        android:maxHeight="22dp"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:background="@drawable/clock"
-                        android:id="@+id/imageAlarm2"
-                        android:layout_above="@+id/switch2"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="28dp" />
 
 
                 </RelativeLayout>
@@ -114,8 +118,8 @@
             <TableRow
                 android:id="@+id/tablerow2"
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
                 android:gravity="center_horizontal|center_vertical"
+                android:layout_width="match_parent"
                 >
 
                 <RelativeLayout
@@ -123,17 +127,23 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:background="@color/blue3">
+                    android:background="@color/blue3"
+                    android:gravity="center_vertical|center_horizontal">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:maxWidth="22dp"
-                        android:maxHeight="22dp"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:background="@drawable/clock"
-                        android:id="@+id/imageAlarm3" />
+
+                    <TextView
+                        android:text="06:20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="65dp"
+                        android:id="@+id/alarm3"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:clickable="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="42sp"
+                        android:layout_marginTop="40dp" />
 
                     <Switch
                         android:text=""
@@ -145,7 +155,6 @@
                         android:gravity="center_horizontal|center_vertical"
                         android:id="@+id/switch3" />
 
-
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -156,14 +165,19 @@
                     android:gravity="center_horizontal|center_vertical"
                     android:background="@color/blue4">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:maxWidth="22dp"
-                        android:maxHeight="22dp"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:background="@drawable/clock"
-                        android:id="@+id/imageAlarm4" />
+                    <TextView
+                        android:text="06:20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="65dp"
+                        android:id="@+id/alarm4"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:clickable="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="42sp"
+                        android:layout_marginTop="40dp" />
 
                     <Switch
                         android:text=""
@@ -174,7 +188,6 @@
                         android:layout_marginBottom="23dp"
                         android:gravity="center_horizontal|center_vertical"
                         android:id="@+id/switch4" />
-
 
                 </RelativeLayout>
             </TableRow>
@@ -196,13 +209,28 @@
                 android:layout_width="match_parent"
                 >
 
-                <LinearLayout
+                <RelativeLayout
                     android:id="@+id/relative5"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:background="@color/blue5">
+                    android:background="@color/blue5"
+                    android:gravity="center_vertical|center_horizontal">
+
+
+                    <TextView
+                        android:text="06:20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="65dp"
+                        android:id="@+id/alarm5"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:clickable="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="42sp"
+                        android:layout_marginTop="40dp" />
 
                     <Switch
                         android:text=""
@@ -211,65 +239,50 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="23dp"
+                        android:gravity="center_horizontal|center_vertical"
                         android:id="@+id/switch5" />
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:maxWidth="22dp"
-                        android:maxHeight="22dp"
-                        android:background="@drawable/clock"
-                        android:id="@+id/imageAlarm5"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
 
-
-                </LinearLayout>
-
-                <LinearLayout
+                <RelativeLayout
                     android:id="@+id/relative6"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:gravity="center_horizontal|center_vertical"
                     android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
                     android:background="@color/blue6">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_horizontal|center_vertical">
+                    <TextView
+                        android:text="06:20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="65dp"
+                        android:id="@+id/alarm6"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:clickable="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="42sp"
+                        android:layout_marginTop="40dp" />
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:maxWidth="22dp"
-                            android:maxHeight="22dp"
-                            android:background="@drawable/clock"
-                            android:layout_marginLeft="30dp"
-                            android:id="@+id/imageAlarm6" />
+                    <Switch
+                        android:text=""
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="23dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:id="@+id/switch6" />
 
-                        <Switch
-                            android:text=""
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="60dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="23dp"
-                            android:id="@+id/switch6" />
-
-                    </LinearLayout>
-
-
-
-
-
-                </LinearLayout>
+                </RelativeLayout>
             </TableRow>
 
         </LinearLayout>
 
     </LinearLayout>
+
 
 
 </LinearLayout>
