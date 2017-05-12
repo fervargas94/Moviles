@@ -35,25 +35,14 @@
         android:layout_marginTop="39dp"
         android:id="@+id/editText" />
 
-    <TextView
-        android:text="Squats"
+    <Button
+        android:text="Save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="78dp"
-        android:id="@+id/textView2"
-        android:layout_alignLeft="@+id/ip"
-        android:layout_alignStart="@+id/ip" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_below="@+id/editText"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_marginTop="65dp"
-        android:id="@+id/editText3" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="69dp"
+        android:id="@+id/saveIp"
+        android:background="@color/blue2" />
 
 </RelativeLayout>
