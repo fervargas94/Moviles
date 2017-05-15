@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public int h1, h2, h3, h4, h5, h6;
     public int m1, m2, m3, m4, m5, m6;
     public String id1, id2, id3, id4, id5, id6;
+    public boolean charging = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +48,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-        //Parse
-        Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("p8ahjoXfgrIm8Ldu7AYJ4FET1UT6z9YuE7uT596Y")
-                .clientKey("2B1qmAcGE0FhcdeEmYS1XeeXgb9R1oyC6AK6rPug")
-                .server("https://parseapi.back4app.com/").build());
 
         final TextView alarm1, alarm2, alarm3, alarm4, alarm5, alarm6;
         final Switch sw1, sw2, sw3, sw4, sw5, sw6;
@@ -165,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("score", "Failed");
 
                 }
+                charging = false;
             }
         });
 
@@ -237,13 +232,15 @@ public class MainActivity extends AppCompatActivity {
         sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
-                String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h1 + "&minutes="+ m1;
-                if (bChecked) {
-                    apiURL += "&status=on";
-                    new saveAlarm().execute(apiURL, String.valueOf(h1), String.valueOf(m1), id1, "on");
-                } else {
-                    apiURL += "&status=off";
-                    new saveAlarm().execute(apiURL, String.valueOf(h1), String.valueOf(m1), id1, "off");
+                if(!charging) {
+                    String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h1 + "&minutes=" + m1;
+                    if (bChecked) {
+                        apiURL += "&status=on";
+                        new saveAlarm().execute(apiURL, String.valueOf(h1), String.valueOf(m1), id1, "on");
+                    } else {
+                        apiURL += "&status=off";
+                        new saveAlarm().execute(apiURL, String.valueOf(h1), String.valueOf(m1), id1, "off");
+                    }
                 }
             }
         });
@@ -251,15 +248,15 @@ public class MainActivity extends AppCompatActivity {
         sw2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
-                String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h2 + "&minutes="+ m2;
-                if (bChecked) {
-                    apiURL += "&status=on";
-                    new saveAlarm().execute(apiURL, String.valueOf(h2), String.valueOf(m2), id2, "on");
-                } else {
-                    System.out.println("Apagarlo");
-                    apiURL += "&status=off";
-                    System.out.println(apiURL);
-                    new saveAlarm().execute(apiURL, String.valueOf(h2), String.valueOf(m2), id2, "off");
+                if(!charging) {
+                    String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h2 + "&minutes=" + m2;
+                    if (bChecked) {
+                        apiURL += "&status=on";
+                        new saveAlarm().execute(apiURL, String.valueOf(h2), String.valueOf(m2), id2, "on");
+                    } else {
+                        apiURL += "&status=off";
+                        new saveAlarm().execute(apiURL, String.valueOf(h2), String.valueOf(m2), id2, "off");
+                    }
                 }
             }
         });
@@ -267,13 +264,15 @@ public class MainActivity extends AppCompatActivity {
         sw3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
-                String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h3 + "&minutes="+ m3;
-                if (bChecked) {
-                    apiURL += "&status=on";
-                    new saveAlarm().execute(apiURL, String.valueOf(h3), String.valueOf(m3), id3, "on");
-                } else {
-                    apiURL += "&status=off";
-                    new saveAlarm().execute(apiURL, String.valueOf(h3), String.valueOf(m3), id3, "off");
+                if(!charging) {
+                    String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h3 + "&minutes=" + m3;
+                    if (bChecked) {
+                        apiURL += "&status=on";
+                        new saveAlarm().execute(apiURL, String.valueOf(h3), String.valueOf(m3), id3, "on");
+                    } else {
+                        apiURL += "&status=off";
+                        new saveAlarm().execute(apiURL, String.valueOf(h3), String.valueOf(m3), id3, "off");
+                    }
                 }
             }
         });
@@ -281,13 +280,15 @@ public class MainActivity extends AppCompatActivity {
         sw4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
-                String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h4 + "&minutes="+ m4;
-                if (bChecked) {
-                    apiURL += "&status=on";
-                    new saveAlarm().execute(apiURL, String.valueOf(h4), String.valueOf(m4), id4, "on");
-                } else {
-                    apiURL += "&status=off";
-                    new saveAlarm().execute(apiURL, String.valueOf(h4), String.valueOf(m4), id4, "off");
+                if(!charging) {
+                    String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h4 + "&minutes=" + m4;
+                    if (bChecked) {
+                        apiURL += "&status=on";
+                        new saveAlarm().execute(apiURL, String.valueOf(h4), String.valueOf(m4), id4, "on");
+                    } else {
+                        apiURL += "&status=off";
+                        new saveAlarm().execute(apiURL, String.valueOf(h4), String.valueOf(m4), id4, "off");
+                    }
                 }
             }
         });
@@ -295,13 +296,15 @@ public class MainActivity extends AppCompatActivity {
         sw5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
-                String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h5 + "&minutes="+ m5;
-                if (bChecked) {
-                    apiURL += "&status=on";
-                    new saveAlarm().execute(apiURL, String.valueOf(h5), String.valueOf(m5), id5, "on");
-                } else {
-                    apiURL += "&status=off";
-                    new saveAlarm().execute(apiURL, String.valueOf(h5), String.valueOf(m5), id5, "off");
+                if(!charging) {
+                    String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h5 + "&minutes=" + m5;
+                    if (bChecked) {
+                        apiURL += "&status=on";
+                        new saveAlarm().execute(apiURL, String.valueOf(h5), String.valueOf(m5), id5, "on");
+                    } else {
+                        apiURL += "&status=off";
+                        new saveAlarm().execute(apiURL, String.valueOf(h5), String.valueOf(m5), id5, "off");
+                    }
                 }
             }
         });
@@ -309,13 +312,15 @@ public class MainActivity extends AppCompatActivity {
         sw6.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
-                String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h6 + "&minutes="+ m6;
-                if (bChecked) {
-                    apiURL += "&status=on";
-                    new saveAlarm().execute(apiURL, String.valueOf(h6), String.valueOf(m6), id6, "on");
-                } else {
-                    apiURL += "&status=off";
-                    new saveAlarm().execute(apiURL, String.valueOf(h6), String.valueOf(m6), id6, "off");
+                if(!charging) {
+                    String apiURL = "http://192.168.1.78:5000/set_alarm?hour=" + h6 + "&minutes=" + m6;
+                    if (bChecked) {
+                        apiURL += "&status=on";
+                        new saveAlarm().execute(apiURL, String.valueOf(h6), String.valueOf(m6), id6, "on");
+                    } else {
+                        apiURL += "&status=off";
+                        new saveAlarm().execute(apiURL, String.valueOf(h6), String.valueOf(m6), id6, "off");
+                    }
                 }
             }
         });
@@ -403,34 +408,38 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             System.out.println(result);
-            if(result.contains("ok")){
+            if(result != null) {
+                if (result.contains("ok")) {
 
-                ParseQuery<ParseObject> query = ParseQuery.getQuery("alarms");
+                    ParseQuery<ParseObject> query = ParseQuery.getQuery("alarms");
 
-                // Retrieve the object by id
-                //CAMBIAR AQUI
-                query.getInBackground(currentID, new GetCallback<ParseObject>() {
-                    public void done(ParseObject object, ParseException e) {
-                        if (e == null) {
-                            // Now let's update it with some new data. In this case, only cheatMode and score
-                            // will get sent to the Parse Cloud. playerName hasn't changed.
-                            if(onOff.contains("on")){
-                                object.put("on", true);
-                            }else{
-                                object.put("on", false);
-                            }
-                            object.saveInBackground(new SaveCallback() {
-                                @Override
-                                public void done(ParseException e) {
-                                    if (e == null)
-                                        Toast.makeText(MainActivity.this, "Alarm status changed ", Toast.LENGTH_SHORT).show();
-                                    else
-                                        Toast.makeText(MainActivity.this, "Error! Try again!", Toast.LENGTH_SHORT).show();
+                    // Retrieve the object by id
+                    //CAMBIAR AQUI
+                    query.getInBackground(currentID, new GetCallback<ParseObject>() {
+                        public void done(ParseObject object, ParseException e) {
+                            if (e == null) {
+                                // Now let's update it with some new data. In this case, only cheatMode and score
+                                // will get sent to the Parse Cloud. playerName hasn't changed.
+                                if (onOff.contains("on")) {
+                                    object.put("on", true);
+                                } else {
+                                    object.put("on", false);
                                 }
-                            });
+                                object.saveInBackground(new SaveCallback() {
+                                    @Override
+                                    public void done(ParseException e) {
+                                        if (e == null)
+                                            Toast.makeText(MainActivity.this, "Alarm status changed ", Toast.LENGTH_SHORT).show();
+                                        else
+                                            Toast.makeText(MainActivity.this, "Error! Try again!", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
                         }
-                    }
-                });
+                    });
+                } else {
+                    Toast.makeText(MainActivity.this, "Error! Try again!", Toast.LENGTH_SHORT).show();
+                }
             }else{
                 Toast.makeText(MainActivity.this, "Error! Try again!", Toast.LENGTH_SHORT).show();
             }
